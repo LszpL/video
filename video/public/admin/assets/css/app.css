@@ -1477,13 +1477,24 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
     border-color: #5eb95e!important;
 }
 
-.tpl-pagination .am-disabled a,
-.tpl-pagination li a {
+/*.tpl-pagination .am-disabled a,*/
+.pagination li a {
     color: #23abf0;
     border-radius: 3px;
     padding: 6px 12px;
 }
-
+.pagination li span {
+    color: #23abf0;
+    border-radius: 3px;
+    padding: 6px 12px;
+    enable=false;
+}
+.pagination .active span{
+    background:#23abf0;
+    color:#fff;
+    border:1px solid #23abf0;
+    padding:6px 12px;
+}
 .tpl-pagination .am-active a {
     background: #23abf0;
     color: #fff;
