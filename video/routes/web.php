@@ -14,8 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
  //后台首页	
- Route::get('/admin/index','admin\IndexController@index');
+ Route::get('/admin','admin\IndexController@index');
 
 
  //分类模块
@@ -48,4 +49,32 @@ Route::get('admin/video/index','admin\VideoController@index');
 
 //推广模块
 //
+
+=======
+
+
+Route::get('/admin','Admin\IndexController@index');
+
+ //评论列表路由
+Route::get('/admin/comment','Admin\CommentController@index');
+ // 评论删除路由
+Route::post('/admin/comment/delete/{id}','Admin\CommentController@delete');
+
+// vip用户列表路由
+Route::get('/admin/user/vip','Admin\VipController@index');
+
+Route::post('/admin/user/vip/delete/{id}','Admin\VipController@delete');
+
+// 友情链接
+// 连接列表
+Route::get('/admin/link','Admin\LinkController@index');
+
+// 更新信息
+Route::post('/admin/link/update','Admin\LinkController@update');
+// 删除
+Route::post('/admin/link/delete/{id}','Admin\LinkController@delete');
+
+// 添加
+Route::get('/admin/link/add','Admin\LinkController@add');
+Route::post('/admin/link/insert','Admin\LinkController@insert');
 
