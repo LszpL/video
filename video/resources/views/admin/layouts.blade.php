@@ -274,13 +274,13 @@
                                 </a>
                                 <a href="form-news.html">
                                     <i class="am-icon-angle-right"></i>
-                                    <span>视频上传</span>
+                                    <span>视频图表</span>
                                     <i class="tpl-left-nav-content tpl-badge-primary">5</i>
                                 </a>
 
                                 <a href="form-news-list.html">
                                     <i class="am-icon-angle-right"></i>
-                                    <span>文字列表</span>
+                                    <span>视频上传</span>
 
                                 </a>
                             </li>

@@ -102,9 +102,21 @@ class VideoController extends Controller
     public function index(Request $request)
     {
     	$data = \DB::table('videos_data')->where('video_name','like','%'.$request->input('keyword').'%')->paginate($request->input('count',5));
-		
+		$search = $request->except('_token');
 
-    	return view('admin.video.index',['title'=>'视频列表','data'=>$data]);
+
+    	return view('admin.video.index',['title'=>'视频列表','data'=>$data,'search'=>$search]);
+
+    }
+
+    public function detail($id)
+    {
+
+    	$first = \DB::table('videos_data')->where('video_id',$id)->first();
+    	
+    	return view('admin.video.detail',['title'=>'视频详情','first'=>$first]);
+
+
 
     }
 

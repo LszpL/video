@@ -43,6 +43,8 @@ Route::get('/admin/video/add','admin\VideoController@add');
 Route::post('admin/video/doadd','admin\VideoController@doadd');
 Route::post('/admin/upload','admin\VideoController@upload');
 Route::get('admin/video/index','admin\VideoController@index');
+Route::post('admin/video/index','admin\VideoController@index');
+Route::get('admin/video/detail/{id}','admin\VideoController@detail');
 
 
 

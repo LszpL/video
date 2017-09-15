@@ -23,7 +23,7 @@
                         <div class="portlet-input input-small input-inline">
                             <div class="input-icon right">
                                 <i class="am-icon-search"></i>
-                                <input type="text" class="form-control form-control-solid" placeholder="搜索...">
+                                <input type="text" class="form-control form-control-solid"  value="" placeholder="搜索...">
                             </div>
                         </div>
                     </div>
@@ -44,16 +44,28 @@
                             <div class="am-u-sm-12 am-u-md-3">
                                 <div class="am-form-group">
                                    <select data-am-selected="{btnSize: 'sm'}" name="count"  >
-                                        <option value="5">5</option> 
-                                        <option value="10">10</option> 
-                                        <option value="20">20</option> 
+                                        <option  
+                                        @if( $search['count'] == 5 ) 
+                                            selected 
+                                        @endif
+                                          value="5">5</option> 
+                                        <option value="10"
+                                        @if( $search['count'] == 10 ) 
+                                            selected 
+                                        @endif
+                                        >10</option> 
+                                        <option 
+                                        @if( $search['count'] == 20 ) 
+                                            selected 
+                                        @endif
+                                        value="20">20</option> 
                                            
                                    </select>
                                 </div>
                             </div>
                             <div class="am-u-sm-12 am-u-md-3">
                                 <div class="am-input-group am-input-group-sm">
-                                  <input type="text" class="am-form-field" name="keyword" value="">
+                                  <input type="text" class="am-form-field" name="keyword" value="{{$search['keyword']}}">
                                     <span class="am-input-group-btn">
                                         <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="submit"></button>
                                       </span>

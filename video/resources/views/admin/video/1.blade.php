@@ -3,7 +3,7 @@
 
 @section('sidebar')
 
-     <div class="tpl-content-wrapper">
+	 <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
                 视频 标签组件
             </div>

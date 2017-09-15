@@ -38,11 +38,16 @@ class LabelController extends Controller
 
 	public function index (Request $request)
 	{	
+		$search = $request->except('_token');
 
 		$data = \DB::table('videos_label')->where('label_name','like','%'.$request->input('keyword').'%')->paginate($request->input('count',5));
 		
-		
-		return view('admin.label.index',['title'=>'标签列表','data'=>$data]);
+		if(empty($search)){
+			$search['count']=5;
+			$search['keyword']='';
+
+		}
+		return view('admin.label.index',['title'=>'标签列表','data'=>$data,'search'=>$search]);
 
 	}
 	public function update(Request $request)
