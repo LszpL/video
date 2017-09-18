@@ -1,7 +1,7 @@
 @extends('admin.layouts')
 
 
-@section('sidebar')
+@section('content')
 
      <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
@@ -100,16 +100,17 @@
                                             <td>
                                                 <div class="am-btn-toolbar">
                                                     <div class="am-btn-group am-btn-group-xs">
-                                                       
+                                                            @if($item->video_status == '下线')
                                                             <button  class="am-btn am-btn-default am-btn-xs am-text-secondary"  >
                                                                 <span class="am-icon-pencil-square-o" ></span>
-                                                                <a href="JavaScript:;"  onclick=" ue({{$item->video_id}}) "> 上线</a>
+                                                                <a href="JavaScript:;"  onclick=" online({{$item->video_id}}) "> 已下线</a>
                                                              </button>
-
+                                                            @endif
+                                                            @if($item->video_status == '上线')    
                                                             <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span>
-                                                            <a href="JavaScript:;"  onclick=" del({{$item->video_id}}) "> 下线</a> 
+                                                            <a href="JavaScript:;"  onclick=" offline({{$item->video_id}}) "> 已上线</a> 
                                                             </button>
-                                                          
+                                                            @endif
                                                     </div>
                                                 </div>
                                             </td>
@@ -119,11 +120,11 @@
                                                        
                                                             <button  class="am-btn am-btn-default am-btn-xs am-text-secondary"  >
                                                                 <span class="am-icon-pencil-square-o" ></span>
-                                                                <a href="JavaScript:;"  onclick=" ue({{$item->video_id}}) "> 编辑</a>
+                                                                <a href="/admin/video/edit/{{$item->video_id}}"> 编辑</a>
                                                              </button>
 
                                                             <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span>
-                                                            <a href="JavaScript:;"  onclick=" del({{$item->video_id}}) "> 删除</a> 
+                                                            <a href="/admin/video/delete/{{$item->video_id}}"> 删除</a> 
                                                             </button>
                                                           
                                                     </div>
@@ -146,5 +147,80 @@
 
             </div>
 
+
+@endsection
+
+@section('js')
+@parent
+  
+<script type="text/javascript">
+
+function online (id){
+
+
+
+            layer.confirm('您确定要上线吗？', 
+                {
+                  btn: ['确认','取消'] //按钮
+                },
+
+                 function()
+                 {
+
+                   
+                    $.ajax({
+                        type:'post',
+                        data:{id:id,_token:'{{csrf_token()}}' },
+                        url:'/admin/video/online',
+                        success:function(data){
+                        layer.msg(data); 
+                        location.href = location.href;  
+                        },
+                        dateType:'json'
+                    });  
+                 },
+                 function()
+                 {  
+                   layer.msg('取消操作');
+                 }
+            );
+
+            
+        }
+function offline (id){
+
+
+
+            layer.confirm('您确定要下线吗？', 
+                {
+                  btn: ['确认','取消'] //按钮
+                },
+
+                 function()
+                 {
+
+                   
+                    $.ajax({
+                        type:'post',
+                        data:{id:id,_token:'{{csrf_token()}}' },
+                        url:'/admin/video/offline',
+                        success:function(data){
+                        layer.msg(data); 
+                        location.href = location.href;  
+                        },
+                        dateType:'json'
+                    });  
+                 },
+                 function()
+                 {  
+                   layer.msg('取消操作');
+                 }
+            );
+
+            
+        }
+
+
+</script>
 
 @endsection

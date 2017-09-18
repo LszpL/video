@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
  //后台首页	
  Route::get('/admin/index','admin\IndexController@index');
+ Route::post('/admin/index/session','admin\IndexController@session');
 
 
  //分类模块
@@ -45,9 +46,16 @@ Route::post('/admin/upload','admin\VideoController@upload');
 Route::get('admin/video/index','admin\VideoController@index');
 Route::post('admin/video/index','admin\VideoController@index');
 Route::get('admin/video/detail/{id}','admin\VideoController@detail');
-
-
+Route::post('admin/video/online','admin\VideoController@online');
+Route::post('admin/video/offline','admin\VideoController@offline');
+Route::get('admin/video/edit/{id}','admin\VideoController@edit');
+Route::post('admin/video/update/{id}','admin\VideoController@update');
+Route::get('admin/video/delete/{id}','admin\VideoController@delete');
 
 //推广模块
 //
 
+
+
+//前台首页
+ Route::get('/home/index/index','home\IndexController@index');

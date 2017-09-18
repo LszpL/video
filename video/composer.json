@@ -9,8 +9,7 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "php-ffmpeg/php-ffmpeg": "^0.9.5",
-        "pulse00/ffmpeg-bundle": "^0.6"
+        
     },
     "require-dev": {
         "filp/whoops": "~2.0",

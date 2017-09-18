@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{asset('admin_temp/assets/css/amazeui.min.css')}}" />
     <link rel="stylesheet" href="{{asset('admin_temp/assets/css/admin.css')}}">
     <link rel="stylesheet" href="{{asset('admin_temp/assets/css/app.css')}}">
-  
+    <link rel="stylesheet" href="{{asset('admin_temp/bower_components/font-awesome/css/font-awesome.min.css')}}">
     <script src="{{asset('admin_temp/assets/js/echarts.min.js')}}"></script>
 </head>
 
@@ -293,11 +293,11 @@
     
            
 
-    @section('sidebar')
+    @section('content')
            
     @show
 
-
+    
        
 
 
@@ -325,10 +325,27 @@
         }
 
         //提示信息
-         if(typeof($('#session').html()) == 'string' &&  $('#session').html() !== null )
+         if(typeof($('#session').html()) == 'string' &&  $('#session').html()  )
       {
-            layer.alert($('#session').html(), {icon: 8});
+            // layer.alert($('#session').html(), {icon: 8});
       }
+       //清除session 
+      if( typeof($('#session').html()) == 'string' &&  $('#session').html()  )
+        
+       {
+            $.ajax({
+                type: "post",
+                url: "/admin/index/session",
+                data: {id:1,_token:'{{csrf_token()}}'}, 
+                
+                success: function(data){
+                    
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("上传失败，请检查网络后重试");
+                }
+            });
+       } 
 
    </script>  
 

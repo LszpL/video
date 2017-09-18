@@ -23,7 +23,7 @@ class LabelController extends Controller
 
 
 		$data=$request->except('_token');
-
+		
 		$data['created_at']=date('Y-m-d H:i:s');
 		$res=\DB::table('videos_label')->insert($data);
 
@@ -47,7 +47,7 @@ class LabelController extends Controller
 			$search['keyword']='';
 
 		}
-		return view('admin.label.index',['title'=>'标签列表','data'=>$data,'search'=>$search]);
+		return view('admin.label.index')->with(['title'=>'标签列表','data'=>$data,'search'=>$search]);
 
 	}
 	public function update(Request $request)

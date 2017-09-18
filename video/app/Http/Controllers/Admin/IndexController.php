@@ -11,11 +11,19 @@ class IndexController extends Controller
 
 	public function index() {
 
-		$data = \DB::table('videos_data')->where('video_name','like','%'.$request->input('keyword').'%')->paginate($request->input('count',5));
 		
 
-		return view('admin.index.index',['title'=>'后台首页','data'=>$data]);
+		return view('admin.index.index',['title'=>'后台首页']);
 
 	}
 
+	public function session(Request $request){
+
+		$request->session()->forget('info');
+		
+		
+
+		
+
+	}
 }

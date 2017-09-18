@@ -11,7 +11,7 @@ class TypeController extends Controller
     public function add()
     {
 
-    	$data=\DB::table('videos_type')->get();
+    	
     	$data = \DB::table('videos_type')->select('*',\DB::raw("concat(path,',',type_id) AS sort_path"))->orderBy('sort_path')->get();
          
         foreach ($data as $key => $value) {

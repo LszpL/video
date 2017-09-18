@@ -1,7 +1,7 @@
 @extends('admin.layouts')
 
 
-@section('sidebar')
+@section('content')
 
      <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
