@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 // ====================================================后台==============================================
 Route::get('admin/auth',function(){
     return view('admin.auth',['title'=>'权限限制']);
@@ -50,7 +50,7 @@ Route::post('user/sq/{id}','UserController@sq');
 //账号状态
 Route::post('user/fh/{id}','UserController@fh');
 
-===================================	LMY==============================================
+// ===================================	LMY==============================================
 //后台首页	
  Route::get('index','IndexController@index');
  Route::post('index/session','IndexController@session');

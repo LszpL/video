@@ -95,7 +95,7 @@
                                             @if(empty($v->admin_face))
                                             <td><img src="{{asset('/admin/assets/img/user01.png')}}" width="40" height="40"></td>
                                             @else
-                                            <td><img src="/uploads/{{$v->admin_face}}" width="40" height="40" /></td>
+                                            <td><img src="{{url('/uploads')}}/{{$v->admin_face}}" width="40" height="40" /></td>
                                             @endif
                                             <td>{{$v->admin_time}}</td>
                                             <td>

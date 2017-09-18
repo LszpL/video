@@ -141,7 +141,10 @@
                                 <a href="{{url('admin/admin/index')}}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>管理员列表</span>
-
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="tpl-left-nav-item">
                         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-table"></i>
@@ -303,14 +306,14 @@
         if(typeof($('.info').html()) == 'string' && $('.info').html() !== null    ){
                $('.info').each(function(i,n){
                  str += $(n).html()+'<br>'; 
-                 layer.alert(str, {icon: 8});   
+                 layer.alert(str, {icon: 5});   
             });
         }
 
         //提示信息
          if(typeof($('#session').html()) == 'string' &&  $('#session').html()  )
       {
-            // layer.alert($('#session').html(), {icon: 8});
+            layer.alert($('#session').html(), {icon: 8});
       }
        //清除session 
       if( typeof($('#session').html()) == 'string' &&  $('#session').html()  )
@@ -320,13 +323,6 @@
                 type: "post",
                 url: "/admin/index/session",
                 data: {id:1,_token:'{{csrf_token()}}'}, 
-                
-                success: function(data){
-                    
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    alert("上传失败，请检查网络后重试");
-                }
             });
        } 
 
