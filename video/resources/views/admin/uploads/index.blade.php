@@ -103,10 +103,10 @@
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
                                             @if(($item->status=='审核中'))
-                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only" ><span class="am-icon-copy"></span><a href="{{url('admin/upload/finish')}}/{{$item->upload_id}}?page={{$page}}"> 审核完成</a></button>
-
-                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-copy"></span><a href="{{url('admin/upload/defeated')}}/{{$item->upload_id}}?page={{ $page }}">审核失败</a></button>
-
+                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only" ><span class="am-icon-copy"></span><a href="javascript:;" onclick="FinishUser({{$item->upload_id}})"> 审核完成</a></button>
+{{--                                                {{url('admin/upload/finish')}}/{{$item->upload_id}}?page={{$page}}--}}
+                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-copy"></span><a href="javascript:;" onclick="DefeatedUser({{$item->upload_id}})">审核失败</a></button>
+{{--                                                {{url('admin/upload/defeated')}}/{{$item->upload_id}}?page={{ $page }}                                                                   --}}
                                             @endif
 
                                             @if($item->status=='审核失败')
@@ -164,6 +164,60 @@
                         })
                     });
                 });
+    }
+
+    function  FinishUser(id){
+        swal({
+            title: "您确定要审核完成吗？",
+            text: "您确定要审核这条数据？",
+            type: "warning",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            confirmButtonText: "是的，我要审核",
+            confirmButtonColor: "#ec6c62"
+        }, function() {
+            $.ajax({
+                url: "{{url('/admin/upload/finish')}}/"+id,
+                type: "GET"
+            }).done(function(data) {
+                swal("操作成功!", "该数据已成功审核！", "success");
+                $('.confirm').on('click',function (){
+                    location.href=location.href;
+                })
+            }).error(function(data) {
+                swal("OMG", "审核操作失败了!", "error");
+                $('.confirm').on('click',function (){
+                    location.href=location.href;
+                })
+            });
+        });
+    }
+
+    function  DefeatedUser(id){
+        swal({
+            title: "您确定要审核失败吗？",
+            text: "您确定要审核这条数据？",
+            type: "warning",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            confirmButtonText: "是的，我要审核",
+            confirmButtonColor: "#ec6c62"
+        }, function() {
+            $.ajax({
+                url: "{{url('/admin/upload/defeated')}}/"+id,
+                type: "GET"
+            }).done(function(data) {
+                swal("操作成功!", "该数据未通过审核,已告知用户！", "success");
+                $('.confirm').on('click',function (){
+                    location.href=location.href;
+                })
+            }).error(function(data) {
+                swal("OMG", "审核操作失败了!", "error");
+                $('.confirm').on('click',function (){
+                    location.href=location.href;
+                })
+            });
+        });
     }
 
 </script>

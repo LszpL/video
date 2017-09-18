@@ -126,9 +126,9 @@
         }
 ////        //判断上传文件的后缀名
         var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
-        if (strExtension != 'jpg' && strExtension != 'gif'
-            && strExtension != 'png' && strExtension != 'bmp') {
-            alert("请选择图片文件");
+        if (strExtension != 'jpg' && strExtension != 'avi'
+            && strExtension != 'rmvb' && strExtension != 'wmv') {
+            alert("请选择视频文件");
             return;
         }
         var formData = new FormData($('#art_form')[0]);
@@ -138,9 +138,9 @@
             data: formData,
             contentType: false,
             processData: false,
-            success: function(data2) {
-                $('#img1').attr('src','/'+data2);
-                $('#art_thumb').val(data2)
+            success: function(data) {
+                $('#img1').attr('src','/'+data);
+                $('#art_thumb').val(data)
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 alert("上传失败，请检查网络后重试");

@@ -58,7 +58,31 @@ class UploadController extends Controller
         }
 
     }
-
+    //无数新上传图片
+//    public function video(Request $request)
+//    {
+//        //获取上传的文件对象
+//        $file = Input::file('file_name');
+//
+//        //dd($file);
+//        //判断文件是否有效
+//        if ($file->isValid()) {
+//            $entension = $file->getClientOriginalExtension();//上传文件的后缀名
+////            新文件名
+//            $newName = date('YmdHis') . mt_rand(1000, 9999) . '.' . $entension;
+////            上传到自己的服务器上
+//            $path = $file->move(public_path() . '/uploads', $newName);
+//
+////            上传到七牛云上
+//            //\Storage::disk('qiniu')->writeStream('uploads/'.$newName, fopen($file->getRealPath(), 'r'));
+////            上传到阿里OSS
+//            //OSS::upload('uploads/'.$newName, $file->getRealPath());
+//            $filepath = 'uploads/' . $newName;
+//            //返回文件的路径
+//            return $filepath;
+//        }
+//
+//    }
 
         public  function add()
         {
@@ -79,7 +103,7 @@ class UploadController extends Controller
         public  function insert(Request $request)
         {
             //表单验证
-            $data2 = $request->except('_token', 'parent_id');
+            $data = $request->except('_token', 'art_thumb');
             $rule = [
                 'title' => 'required|min:2|max:15',
                 'type_name' => 'required',
@@ -100,8 +124,9 @@ class UploadController extends Controller
                 'content.min' => '内容最小为10位',
                 'content.max' => '内容最大为30位',
             ];
-            $validator = Validator::make($data2, $rule, $msg);
+            $validator = Validator::make($data, $rule, $msg);
             if ($validator->fails()) {
+//                return 1111; 直接在页面使用inseet路由会太哦啊转到这里,如果有多个return 就会不会执行之后的return ajax加载路径会失效
                 return redirect('admin/upload/add')
                     ->withErrors($validator)
                     ->withInput();
@@ -112,24 +137,22 @@ class UploadController extends Controller
          if($request->hasFile("file_name")) {
            //确认上传的文件是否成功
             if ($request->file('file_name')->isValid()) {
-               $ext = $request->file('file_name')->getClientOriginalExtension();
+              $ext = $request->file('file_name')->getClientOriginalExtension();
                //执行移动上传文件
                 $filename = time().rand(1000,9999).".".$ext;
-                //$request->file('file_name')->move("./uploads",$filename);
-             \Storage::disk('qiniu')->writeStream('uploads/'.$filename, fopen($file->getRealPath(), 'r'));
+                $request->file('file_name')->move("./uploads",$filename);
+             //\Storage::disk('qiniu')->writeStream('uploads/'.$filename, fopen($file->getRealPath(), 'r'));
                 //修改文件数据
-            $data2['file_name'] = $filename;
-            $data2['upload_address'] = 'uploads/' . $filename;
-//                $filepath = 'uploads/'.$filename;
-//                //返回文件的路径
-//                return  $filepath;
+            $data['file_name'] = $filename;
+            $data['upload_address'] = 'uploads/' . $filename;
+
            }
         }
 
             $time = date('Y-m-d H:i:s', time());
-            $data2['upload_time'] = $time;
+            $data['upload_time'] = $time;
 //                //插入数据库
-            $res = \DB::table('users_upload')->insert($data2);
+            $res = \DB::table('users_upload')->insert($data);
             if ($res) {
                 return redirect('/admin/upload/index')->with(['info' => '添加成功']);
 //

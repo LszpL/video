@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>哔哩哔哩弹幕视频网 - ( ゜- ゜)つロ 乾杯~ - bilibili</title>
+<meta name="description" content="bilibili是一家弹幕站点,大家可以在这里找到许多的欢乐.">
+<meta name="keywords" content="B站 弹幕 字幕 AMV MAD MTV ANIME 动漫 动漫音乐 游戏 游戏解说 ACG galgame 动画 番组 新番 初音 洛天依 vocaloid">
+<meta name="referrer" content="always">
+<link rel="shortcut icon" href="https://static-s.bilibili.com/images/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://static-s.bilibili.com/opensearch.xml" title="哔哩哔哩" />
+<link rel="stylesheet" href="style/css/base.css" type="text/css"/>
+<link rel="stylesheet" href="style/css/style.min.css" type="text/css"/>
+
+<script type="text/javascript" src="style/js/jquery.min.js"></script>
+<script type="text/javascript" src="style/js/alertplate.js"></script>
+<script id="seajsnode" type="text/javascript" src="style/js/sea.js"></script>
+<script type="text/javascript" src="style/js/sea.config.js"></script>
+</head>
+<body>
+			<div class="z_top_container">
+			<div class="z_top">
+				<div class="z_header">
+					<div class="z_top_nav">
+						<ul>
+	<li class="home">
+		<a class="i-link" href="//www.bilibili.com/index.html"><span>主站</span></a>
+	</li>
+		<li class="hbili"><a class="i-link" href="http://h.bilibili.com/" title="画友">画友</a></li>
+	<li class="b-gc" hasframe="true">
+		<a class="i-link" href="//game.bilibili.com/" title="游戏中心">游戏中心</a>
+		<div class="i_div game" data-frame="game"></div>
+	</li>
+		<li class="live" hasframe="true">
+		<a class="i-link" target="_blank" href="//live.bilibili.com" title="直播">直播</a>
+		<div class="i_div stream" data-frame="stream"></div>
+	</li>
+  <li class="b-ml"><a class="i-link" target="_blank" href="//show.bilibili.com/platform/home.html" title="会员购">会员购</a></li>
+	<li class="b-zb"><a class="i-link" target="_blank" href="//bmall.bilibili.com/#!/" title="周边">周边</a></li>
+  <li class="shouji">
+		<a class="i-link" target="_blank" href="//app.bilibili.com" title="移动端">移动端</a>
+		<div class="mobile-p-box"><div class="mobile-p-qrcode"></div></div>
+	</li>
+	<li class="b-mz"  hasframe="true">
+	  <a class="i-link" target="_blank" href="//bangumi.bilibili.com/moe/2017/index" title="萌战">萌战</a>
+		<i class="new"></i>
+		<i class="dot"></i>
+		<div class="i_div mz" data-frame="mz"></div>
+	</li>
+</ul>
+
+					</div>
+					<div class="uns_box">
+	<ul class="menu">
+		<li id="i_menu_profile_btn" guest="no" class="u-i i_user" i_menu="#i_menu_profile">
+			<a class="i-link" href="//space.bilibili.com/" target="_blank">
+				<img class="i_face">
+			</a>
+			<div id="i_menu_profile" class="i_menu">
+				<div class="i_menu_bg_t"></div>
+				<div class="info clearfix"><div class="uname"></div><div class="coin"></div></div>
+				<div class="member-menu-wrp">
+					<ul class="member-menu">
+						<li><a href="https://account.bilibili.com/site/home" target="_blank" class="account"><i class="b-icon b-icon-p-account"></i>个人中心</a></li>
+						<li><a href="//member.bilibili.com/v/#!/article" target="_blank" class="member"><i class="b-icon b-icon-p-member"></i>投稿管理</a></li>
+						<li><a href="https://pay.bilibili.com/" target="_blank" class="wallet"><i class="b-icon b-icon-p-wallet"></i>B币钱包</a></li>
+						<li><a href="//link.bilibili.com/p/center/index" target="_blank" class="live"><i class="b-icon b-icon-p-live"></i>直播中心</a></li>
+						<li><a href="//show.bilibili.com/platform/home.html" target="_blank" class="ticket"><i class="b-icon b-icon-p-ticket"></i>会员购订单</a></li>
+					</ul>
+				</div>
+				<div class="member-bottom">
+					<a class="logout" href="https://account.bilibili.com/login?act=exit">退出</a>
+				</div>
+			</div>
+		</li>
+		<li id="i_menu_become_vip" guest="no" i_menu="become_vip" class="u-i">
+			<a class="i-link" href="//big.bilibili.com/site/big.html" target="_blank">成为大会员</a>
+		</li>
+		<li id="i_menu_community_msg_btn" guest="no" i_menu="community_msg" class="u-i">
+            <a class="i-link" href="//message.bilibili.com" target="_blank">消息</a>
+        </li>
+		<li id="i_menu_msg_btn" guest="no" i_menu="#dyn_wnd" class="u-i">
+			<div class="num" id="dynamic_num_total"></div>
+			<a class="i-link" href="//www.bilibili.com/account/dynamic" target="_blank">动态</a>
+		</li>
+    <li id="i_menu_watchLater_btn" guest="no" class="u-i" style="display:list-item">
+      <a class="i-link" href="//www.bilibili.com/watchlater/#/list" target="_blank">稍后再看</a>
+    </li>
+		<li id="i_menu_fav_btn" guest="no" i_menu="#i_menu_fav" class="u-i">
+			<a class="i-link" href="//space.bilibili.com/#!/favlist" target="_blank">收藏夹</a>
+		</li>
+		<li id="i_menu_login_reg" guest="yes" class="u-i">
+			<a id="i_menu_login_btn" class="i-link login" href="https://account.bilibili.com/login"><span>登录</span></a><i class="s-line"></i><a id="i_menu_register_btn" class="i-link reg" href="https://www.bilibili.com/register"><span>注册</span></a>
+		</li>
+		<li id="i_menu_history_btn" class="u-i">
+			<a class="i-link" href="//www.bilibili.com/account/history">历史</a>
+		</li>
+		<li class="u-i b-post">
+			<a class="i-link" href="//member.bilibili.com/v/video/submit.html" target="_blank">投 稿</a>
+			<ul class="s-menu">
+        <li class="article"><a href="//member.bilibili.com/v/#/text-apply" target="_blank"><i class="b-icon b-icon-art"></i><em>专栏投稿</em></a></li>
+        <li class="music-up"><a href="//www.bilibili.com/audio/submit/" target="_blank"><i class="b-icon b-icon-music"></i><em>音频投稿</em></a></li>
+				<li><a href="//member.bilibili.com/v/video/submit.html" target="_blank"><i class="b-icon b-icon-vp"></i><em>视频投稿</em></a></li>
+				<li><a href="//member.bilibili.com/v/#/article" target="_blank"><i class="b-icon b-icon-vm"></i><em>投稿管理</em></a></li>
+				<li><a href="//member.bilibili.com/v/" target="_blank"><i class="b-icon b-icon-vc"></i><em>创作中心</em></a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+				</div>
+			</div>
+		</div>
+	<div class="top_bg">
+		<div class="top"></div>
+	</div>
+<div class="security_content">
+    <style>
+    .security-right{
+        min-height: 928px!important;
+    }
+
+    .security-list li a .al-vip {
+        background: url(style/images/img/icons_m.png) -23px -975px no-repeat;
+    }
+
+    .security-list li a .al-vip.check-t {
+        background-position: -87px -975px;
+    }
+
+    .security-list li a .al-vipscore {
+        background: url(style/images/img/icons_m.png) -23px -1231px no-repeat;
+    }
+
+    .security-list li a .al-vipscore.check-t {
+        background-position: -87px -1231px;
+    }
+
+    .security-list li a .al-gz{
+        background: url(style/images/img/icons_m.png) -792px -80px no-repeat;
+    }
+
+    .security-list li a .al-gz.check-t{
+        background: url(style/images/img/icons_m.png) -855px -80px no-repeat;
+    }
+
+    .viptips {
+        display: none;
+        position: absolute;
+        top: 4px;
+        right: -8px;
+        width: 42px;
+        height: 16px;
+        border-radius: 20px;
+        z-index: 999;
+        background: url(style/images/img/guoqi.png) no-repeat;
+    }
+
+    .isnewvip {
+        display: none;
+        position: absolute;
+        top: 4px;
+        right: -8px;
+        width: 42px;
+        height: 16px;
+        border-radius: 20px;
+        z-index: 999;
+        background: url(style/images/img/icons_m.png) -144px -856px no-repeat;
+    }
+</style>
+<div class="security-left">
+    <ul class="security-list">
+        <li class="f-list" style="cursor: default;"><a  class="first-level" style="color: #99a2aa;cursor: default;">个人中心</a>
+            <ul class="child-list">
+                <li>
+                    <a href="https://account.bilibili.com/site/home.html" id="home" rec-linkid='account_tab_index_click' title="首页">
+                        <i class="al-sy"></i>
+                        <span>首<b class="nbsp"></b>页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="//big.bilibili.com/site/big.html" id="big" style="position:relative">
+                        <i class="al-vip"></i>
+                        <span style="letter-spacing: 7px;">大会员</span>
+                        <span class="viptips" id="viptips"></span>
+                        <span class="isnewvip" id="isnewvip"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="//big.bilibili.com/site/points.html" id="points">
+                        <i class="al-vipscore"></i>
+                        <span>会员积分</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://account.bilibili.com/site/setting" id="setting">
+                        <i class="al-info"></i>
+                        <span>我的信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://account.bilibili.com/site/face.html" id="face">
+                        <i class="al-tx"></i>
+                        <span>我的头像</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://account.bilibili.com/site/nameplate.html" id="nameplate">
+                        <i class="al-mp"></i>
+                        <span>我的勋章</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://passport.bilibili.com/site/site.html" id="site">
+                        <i class="al-aq"></i>
+                        <span>账号安全</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://account.bilibili.com/site/concerned.html" id="concerned">
+                        <i class="al-gz"></i>
+                        <span>悄悄关注</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://account.bilibili.com/site/blacklist.html" id="blacklist">
+                        <i class="al-bl"></i>
+                        <span>黑名单管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://account.bilibili.com/site/coin" id="coin">
+                        <i class="al-coin"></i>
+                        <span>我的硬币</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://account.bilibili.com/site/record.html" id="record">
+                        <i class="al-jl"></i>
+                        <span>我的记录</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://account.bilibili.com/site/identification.html" id="identification">
+                        <i class="al-rz"></i>
+                        <span>实名认证</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://member.bilibili.com/#store&sub=invite" target="_blank" id="identifica" rec-linkid='account_tab_invite_click' id="account_tab_invite_click" title="邀请注册">
+                        <i class="al-zc"></i>
+                        <span>邀请注册</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="f-list f-list-hover"><a href="//space.bilibili.com" target="_blank" class="first-level" rec-linkid='account_tab_space_click' id="account_tab_space_click" title="个人空间">个人空间<i class="m-arrow"></i></a></li>
+        <li class="f-list f-list-hover"><a href="https://pay.bilibili.com/bb_balance.html" target="_blank" class="first-level" rec-linkid='account_tab_wallet_click' id="account_tab_wallet_click" title="我的钱包">我的钱包<i class="m-arrow"></i></a></li>
+        <li class="f-list f-list-hover"><a href="http://member.bilibili.com/#video_manage" target="_blank" class="first-level" rec-linkid='account_tab_video_click' id="account_tab_video_click" title="投稿管理">投稿管理<i class="m-arrow"></i></a></li>
+        <li class="f-list f-list-hover"><a href="//live.bilibili.com/i" target="_blank" class="first-level" rec-linkid='account_tab_live_click' id="account_tab_live_click" title="直播中心">直播中心<i class="m-arrow"></i></a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+window.rec_rp = window.rec_rp || function() {
+    (rec_rp.q = rec_rp.q || []).push(arguments)
+};
+
+window.get_vip_info = function(callback, re) {
+    re = re ? re : 1;
+    if (!window.UserStatus) {
+        if (re > 10) {
+            clearTimeout(timer);
+            return false;
+        }
+        var timer = setTimeout(function() {
+            re = re + 1;
+            get_vip_info(callback, re);
+        }, 1000);
+    } else {
+        clearTimeout(timer);
+        window.UserStatus.onLoaded(function(info) {
+            if (info.isLogin) {
+                return callback && callback(info);
+            } else {
+                // window.location.href = 'https://account.bilibili.com/login?gourl=' + encodeURIComponent(location.href);
+            }
+        });
+    }
+}
+
+window.ac_rec = function(var1, var2, var3, retry) {
+    retry = retry ? retry : 1;
+    if (!window.rec_rp) {
+        if (retry > 10) {
+            clearTimeout(timere);
+            return;
+        }
+        var timere = setTimeout(function() {
+            retry = retry + 1;
+            ac_rec(var1, var2, var3, retry);
+        }, 1000);
+    } else {
+        clearTimeout(timere);
+        window.rec_rp(var1, var2, var3);
+    }
+}
+
+get_vip_info(function(info) {
+    if (info.accessStatus == 0) {
+        document.getElementById('isnewvip').style.display = 'block';
+    }
+    if (info.vipType == 1 || info.vipType == 2) {
+        if (info.dueRemark) {
+            document.getElementById('viptips').style.display = 'block';
+            document.getElementById('isnewvip').style.display = 'none';
+        }
+    }
+});
+
+ac_rec('event', 'VIP_VIPentrance_show');
+
+document.getElementById('big').onclick = function() {
+    ac_rec('event', 'VIP_VIPentrance_click');
+}
+
+! function() {
+    function hasClass(obj, cls) {
+        return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+    };
+
+    function addClass(obj, cls) {
+        if (!hasClass(obj, cls)) obj.className += " " + cls;
+    };
+
+    function getUrlParam(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)'); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    };
+
+    var pathname = getUrlParam('type');
+    if (!pathname) {
+        var strUrl = window.location.href;
+        var arrUrl = strUrl.split("/");
+        var strPage = arrUrl[arrUrl.length - 1];
+        if (strPage.indexOf(".") == -1) {
+            pathname = strPage;
+        } else {
+            pathname = strPage.substr(0, strPage.indexOf("."));
+        }
+    }
+
+    var getSite = document.getElementById(pathname);
+
+    addClass(getSite.childNodes[1], 'check-t');
+
+    getSite.className = 'bg-blue';
+
+}();
+</script>
+
+    <div class="security-right">
+    	<div class="sr-t">
+			<span class="tit-b"></span><span class="acc-sec">我的头像</span>
+		</div>
+			<div class="sr-b">
+				<div class="face-g-preview">
+					<a href="updateface.html?type=face" id="face-g-change" class="face-g-action"><p class="line-1">更换</p><p class="line-2">头像</p></a>
+					<span id="face-g-takedown" class="face-g-action disabled"><p class="line-1">卸下</p><p class="line-2">挂件</p></span>
+					<img src="" id="face-g-avatar">
+					<img id="face-g-g">
+				</div>
+				<div class="tabs-mk2 clearfix">
+					<a href="http://www.bilibili.com/html/help.html#p" class="tab-mk2 tab-mk2-r" target="_blank">头像挂件相关帮助 &gt;</a>
+					<a href="face.html" class="tab-mk2 allpendants active">挂件商城</a>
+					<a href="bigpendants.html" class="tab-mk2 big">大会员挂件</a>
+					<a href="mypendants.html?type=face" class="tab-mk2 mypendants">我的挂件</a>
+					<a href="history.html?type=face" class="tab-mk2 history">激活记录</a>
+				</div>
+				<ul class="face-g-tab" id="face-g-tab"></ul>
+				<div class="face-g-list loading" data-api="/pendant/all">
+					{{each}}
+					<div class="face-g-group" name="{{ $value.group_name }}">
+						<div class="face-g-more" collapsed="true">展开</div>
+						<p class="face-g-title">
+							{{ $value.group_name }} <span class="face-g-title-count">（{{ $value.group_count }}）</span> <span class="icon face-cutoff"></span>
+						</p>
+						<div class="face-g-content clearfix">
+							{{each $value.pendant_info as g}}
+							<div class="face-g-item" data-id="{{ g.pid }}" data-point-price="{{ g.point }}" data-bcoin-price="{{ g.bcoin }}" data-coin-price="{{ g.coin }}" data-name="{{ g.name }}" data-img="{{ g.image.replace('http:','') }}" data-expire="{{ g.expire }}">
+								<img data-src="{{ g.image_model.replace('http:','') }}" class="face-g-avatar">
+								<img data-src="{{ g.image.replace('http:','') }}" class="face-g-g">
+								<p class="face-g-name">{{ g.name }}</p>
+							</div>
+							{{/each}}
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+</div>
+<div class="face-buy-layer" id="face-buy-g-layer">
+	<div class="face-buy-close" action="close"></div>
+	<div id="face-buy-select-length" class="face-buy-step">
+		<div class="face-buy-header">
+			<img data-src="{{ userface }}" class="face-buy-avatar">
+			<img data-src="{{ img }}" class="face-buy-g">
+			<p class="face-buy-name">{{ name }}</p>
+			{{if expire != 0}}<p class="face-buy-current-expire-time"><var>{{ expire.format_date() }}</var>到期</p>{{/if}}
+		</div>
+		<div class="face-buy-body">
+			<p class="face-buy-a">购买月份</p>
+			<div class="face-buy-list clearfix">
+				<div class="face-buy-item active" data-value="3">3个月</div>
+				<div class="face-buy-item" data-value="1">1个月</div>
+				<div class="face-buy-item" data-value="12">12个月</div>
+				<div class="face-buy-item custom"><span class="hideit">自定义</span><input type="text" class="face-buy-custom-length"></div>
+			</div>
+			<div class="face-type-list clearfix" style="margin-bottom: 20px;width: 330px">
+				<div class="face-buy-item point" value="">积分兑换</div>
+				<div class="face-buy-item bcoin" value="">B币购买</div>
+				<div class="face-buy-item coin" value="">硬币购买</div>
+			</div>
+			<div class="face-buy-price">
+				<div class="face-buy-coin-change" type="0"><span class="icon"></span> <span class="face-buy-current-coin">{{ coins }}</span><span class="face-buy-arrow"></span><span class="face-buy-sx"></span></div>
+				<var class="face-buy-total-price"></var> <span type="0">个硬币</span><span type="1">B币</span><span type="2">积分</span>
+			</div>
+			<div class="face-buy-price" style="border-bottom:0px;display:none" id="point_have">
+				<div style="float:left;line-height: 0px;">现有积分：<span id="user_point">{{ pointBalance }}</span>积分</div>
+				<div style="float:right;line-height: 0px;"><a href="https://big.bilibili.com/site/points.html" target="_blank">还差<span id="lost-point"></span>积分，如何获取？</a></div>
+			</div>
+		</div>
+		<div class="face-buy-footer">
+			<a class="btn-mk2 primary do-buy-submit">确认{{if expire != 0}}续费{{else}}购买{{/if}}</a>
+		</div>
+	</div>
+	<div id="face-buy-rmb-wait-result" class="face-buy-step">
+		<div class="face-buy-body">
+			<p class="face-buy-rmb-hint">支付提示</p>
+			<p class="face-buy-rmb-hint">请在新打开的页面完成支付！</p>
+		</div>
+		<div class="face-buy-footer">
+			<span class="btn-mk2 primary" id="face-buy-check-pay">支付完成</span>
+			<a href="http://www.bilibili.com/html/help.html#n1_3" target="_blank" class="btn-mk2">支付遇到问题</a>
+		</div>
+	</div>
+	<div id="face-buy-success" class="face-buy-step">
+		<div class="face-buy-body">
+			<div class="face-buy-success-icon"></div>
+			<div class="face-buy-result-title">恭喜，支付成功！</div>
+			<div class="face-buy-result-info">
+				您已成功<span id="face-buy-gm" class="face-buy-action-type">购买</span><span id="face-buy-xf" class="face-buy-action-type">续费</span> <span class="face-buy-g-name"></span>
+			</div>
+			<div class="face-buy-result-info time"><span class="face-buy-expire-time"></span> 到期</div>
+			<div class="face-buy-success-preview">
+				<img data-src="{{ userface }}" id="face-buy-success-avatar">
+				<img data-src="{{ img }}" id="face-buy-success-g">
+			</div>
+		</div>
+		<div class="face-buy-footer">
+			<span class="btn-mk2 primary face-g-use-now">立即装备</span>
+			<span class="btn-mk2 ok" action="close">确认</span>
+		</div>
+	</div>
+	<div id="face-buy-fail" class="face-buy-step">
+		<div class="face-buy-body">
+			<div class="face-buy-fail-icon"></div>
+			<div class="face-buy-result-title">支付未完成</div>
+			<div class="face-buy-result-info">你还没有完成购买 <span class="face-buy-g-name"></span> 哦</div>
+			<div class="face-buy-result-info">订单号：<span class="face-buy-order-id"></span></div>
+			<div class="face-buy-fail-bg"></div>
+		</div>
+		<div class="face-buy-footer">
+			<a href="" class="btn-mk2 primary" id="face-buy-pay-again" target="_blank">继续支付</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    seajs.use("site-face",function(js){
+		js.init_face_index();
+		ac_rec('event', 'face_index_show');
+    });
+</script>
+<div id="global-mask"></div>
+<div class="footer">
+	<div class="footer-wrp">
+		<div class="footer-cnt clearfix">
+			<ul class="boston-postcards">
+				<li>
+					<div class="tips">bilibili</div>
+					<div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/aboutUs.html">关于我们</a></div>
+					<div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/friends-links.html">友情链接</a></div>
+					<div class="cards"><a target="_blank" href="//bmall.bilibili.com/#!/">哔哩哔哩周边</a></div>
+					<div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/contact.html">联系我们</a></div>
+					<div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/join.html">加入我们</a></div>
+					<div class="cards"><a target="_blank" href="https://account.bilibili.com/site/ident.html">官方认证</a></div>
+				</li>
+				<li>
+					<div class="tips">传送门</div>
+					<div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/help.html">帮助中心</a></div>
+					<div class="cards"><a target="_blank" href="//www.bilibili.com/video/av120040/">高级弹幕</a></div>
+					<div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/activity_list.html">活动专题页</a></div>
+					<div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/copyright.html">侵权申诉</a></div>
+					<div class="cards"><a target="_blank" href="https://account.bilibili.com/answer/addq">分院帽计划</a></div>
+					<div class="cards"><a target="_blank" href="//activity.bilibili.com/">活动中心</a></div>
+          <div class="cards"><a target="_blank" href="http://link.acg.tv">用户反馈论坛</a></div>
+					<div class="cards"><a target="_blank" href="http://h.bilibili.com/wallpaper?action=list">壁纸站</a></div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/html/cele.html">名人堂</a></div>
+				</li>
+				<li>
+					<div class="block right">
+						<a target="_blank" href="//app.bilibili.com/">
+							<div class="phone">
+								<div class="pic"></div>
+								<em>手机端下载</em>
+								<div class="qrcode-box-wrp">
+									<div class="qrcode-box qrcode-app">
+										<div class="qrcode-box-arrow">
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a target="_blank" href="http://weibo.com/bilibiliweb">
+							<div class="weibo">
+								<div class="pic"></div>
+								<em>新浪微博</em>
+								<div class="qrcode-box-wrp">
+									<div class="qrcode-box qrcode-weibo">
+										<div class="qrcode-box-arrow">
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a id="weixin">
+							<div class="weixin">
+								<div class="pic"></div>
+								<em>官方微信</em>
+								<div class="qrcode-box-wrp bigvip-qrcode">
+									<div class="qrcode-box qrcode-weixin">
+										<div class="qrcode-box-arrow">
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<div class="partner">
+          <div class="block left" style="padding-top: 0px;">
+              <div class="partner-banner"></div>
+          </div>
+          <div class="block left" style="margin: 0px 68px 0 115px;line-height:24px;float: none;">
+            <p>广播电视节目制作经营许可证：<span>（沪）字第1248号 </span> | 网络文化经营许可证：<span>沪网文[2013]0480-056号</span> | 信息网络传播视听节目许可证：<span>0910417</span> | 互联网ICP备案：<span>沪ICP备13002172号-3</span> 沪ICP证：<span>沪B2-20100043</span> | 违法不良信息举报邮箱：help@bilibili.com | 违法不良信息举报电话：4000233233转3</p>
+            <p><a href="http://www.shjbzx.cn" target="_blank"><i class="icons-footer icons-footer-report"></i><span> 上海互联网举报中心</span></a> | <a href="http://jb.ccm.gov.cn/" target="_blank">12318 全国文化市场举报网站</a> | <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502001911"><img src="style/images/beiantubiao.png" style="vertical-align: top;"> 沪公网安备 31011502001911号</a> | <a href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a></p>
+            <p><a href="http://report.12377.cn:13225/toreportinputNormal_anis.do" target="_blank">网上有害信息举报专区：<img src="style/images/12377.png" width="16" height="16" style="vertical-align: sub;"> 中国互联网违法和不良信息举报中心</a></p>
+          </div>
+      </div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
