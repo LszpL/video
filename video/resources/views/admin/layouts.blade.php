@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="{{asset('admin_temp/assets/css/app.css')}}" >
     <script type="text/javascript"    src="{{asset('admin_temp/assets/js/echarts.min.js')}}"></script>
     <script type="text/javascript"   src="{{asset('admin_temp/assets/js/bootstrap.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('admin_temp/assets/css/sweetalert.css')}}">
 </head>
 
 <body data-type="index"  >
-
 
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
@@ -148,6 +148,7 @@
 
 <div class="tpl-page-container tpl-page-header-fixed">
 
+
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
             BalaBala 列表
@@ -158,10 +159,8 @@
                     <a href="{{url('admin')}}" class="nav-link active">
                         <i class="am-icon-home"></i>
                         <span>首页</span>
-
                     </a>
                 </li>
-
 
                 <li class="tpl-left-nav-item">
                     <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
@@ -169,17 +168,17 @@
                         <span>视频分类</span>
                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                     </a>
-                    <ul class="tpl-left-nav-sub-menu" style="display:block">
+                    <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="{{url('admin/index')}}">
+                            <a href="{{url('admin/type/add')}}">
                                 <i class="am-icon-angle-right"></i>
-                                <span>视频添加</span>
+                                <span>分类添加</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                             </a>
 
-                            <a href="table-images-list.html">
+                            <a href="{{url('admin/type/index')}}">
                                 <i class="am-icon-angle-right"></i>
-                                <span>图片表格</span>
+                                <span>分类列表</span>
                                 <i class="tpl-left-nav-content tpl-badge-success">18</i>
                             </a>
                             <a href="form-news.html">
@@ -203,7 +202,7 @@
                         <span>用户上传管理</span>
                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                     </a>
-                    <ul class="tpl-left-nav-sub-menu" style="display:block">
+                    <ul class="tpl-left-nav-sub-menu" >
                         <li>
                             <a href="{{url('admin/upload/index')}}">
                                 <i class="am-icon-angle-right"></i>
@@ -219,43 +218,113 @@
 
                                 </i>
                             </a>
-
                         </li>
                     </ul>
-                </li>
-                <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                        <i class="am-icon-table"></i>
-                        <span>系统设置</span>
-                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                    </a>
-                    <ul class="tpl-left-nav-sub-menu" style="display:block">
-                        <li>
-                            <a href="{{url('admin/config/create')}}">
-                                <i class="am-icon-angle-right"></i>
-                                <span>添加网站配置</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right">
-
-                                </i>
+                        <li class="tpl-left-nav-item">
+                            <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                                <i class="am-icon-table"></i>
+                                <span>评论管理</span>
+                                <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                             </a>
-                            <a href="{{url('admin/config')}}">
-                                <i class="am-icon-angle-right"></i>
-                                <span>网站配置列表</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right">
-
-                                </i>
-                            </a>
-
+                            <ul class="tpl-left-nav-sub-menu">
+                                <li>
+                                    <a href="{{url('admin/comment')}}">
+                                        <i class="am-icon-angle-right"></i>
+                                        <span>评论列表</span>
+                                        <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                    </ul>
-                </li>
+                        <li class="tpl-left-nav-item">
+                            <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                                <i class="am-icon-table"></i>
+                                <span>用户管理</span>
+                                <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                            </a>
+                            <ul class="tpl-left-nav-sub-menu">
+                                <li>
+                                    <a href="{{url('admin/user/vip')}}">
+                                        <i class="am-icon-angle-right"></i>
+                                        <span>会员列表</span>
+                                        <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="tpl-left-nav-item">
+                            <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                                <i class="am-icon-table"></i>
+                                <span>系统设置</span>
+                                <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                            </a>
 
-            </ul>
+
+                                <ul class="tpl-left-nav-sub-menu" >
+
+                                    <a href="{{url('admin/config/create')}}">
+                                        <i class="am-icon-angle-right"></i>
+                                        <span>添加网站配置</span>
+                                        <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right">
+
+                                        </i>
+                                    </a>
+                                    <a href="{{url('admin/config')}}">
+                                        <i class="am-icon-angle-right"></i>
+                                        <span>网站配置列表</span>
+                                        <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right">
+
+                                        </i>
+                                    </a>
+                                    </ul>
+                        </li>
+                     </li>
+                                <li class="tpl-left-nav-item">
+                                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                                        <i class="am-icon-table"></i>
+                                        <span>友情链接</span>
+                                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                                    </a>
+                                    <ul class="tpl-left-nav-sub-menu">
+                                        <li>
+                                            <a href="{{url('admin/link')}}">
+                                                <i class="am-icon-angle-right"></i>
+                                                <span>链接列表</span>
+                                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url('admin/link/add')}}">
+                                                <i class="am-icon-angle-right"></i>
+                                                <span>添加链接</span>
+                                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="tpl-left-nav-item">
+                                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                                        <i class="am-icon-table"></i>
+                                        <span>推广管理</span>
+                                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                                    </a>
+                                    <ul class="tpl-left-nav-sub-menu">
+                                        <li>
+                                            <a href="{{url('admin/position/push/index?position_id=0')}}">
+                                                <i class="am-icon-angle-right"></i>
+                                                <span>推广视频列表</span>
+                                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
         </div>
     </div>
     @yield('content')
     @section('sidebar')
-
     @show
 </div>
 <script src="{{asset('admin_temp/assets/js/amazeui.min.js')}}"></script>
@@ -273,6 +342,30 @@
 {{--七牛插件引入--}}
 <script type="text/javascript" src="{{asset('admin_temp/assets/js/sweetalert.min.js')}}"></script>
 <script type="text/javascript" src="http://cdn.staticfile.org/plupload/2.1.9/i18n/ar.js"></script>
+
+<!-- 提示信息 -->
+<div style="display:none;">
+    @if(session('info'))
+        <p id="session">{{session('info')}}</p>
+    @endif
+</div>
+<!-- 验证信息 -->
+@if (count($errors) > 0)
+    <div class="alert alert-danger" style="display:none;">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li class= "info" >{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<script src="{{asset('admin_temp/assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('admin_temp/assets/js/amazeui.min.js')}}"></script>
+<script src="{{asset('admin_temp/assets/js/iscroll.js')}}"></script>
+<script src="{{asset('admin_temp/assets/js/app.js')}}"></script>
+<script src="{{asset('admin_temp/assets/js/sweetalert-dev.js')}}"></script>
+<script src="{{asset('admin_temp/assets/js/sweetalert.min.js')}}"></script>
+<script src="{{asset('/layer/layer.js')}}"></script>
 @yield('js')
 </body>
 

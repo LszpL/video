@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     @yield('title')
+
     <meta name="description" content="bilibili是一家弹幕站点,大家可以在这里找到许多的欢乐.">
     <meta name="keywords" content="B站 弹幕 字幕 AMV MAD MTV ANIME 动漫 动漫音乐 游戏 游戏解说 ACG galgame 动画 番组 新番 初音 洛天依 vocaloid">
     <meta name="referrer" content="always">
@@ -29,7 +31,62 @@
     <script type="text/javascript" src="{{asset('home/user/style/js/txv.sea.js')}}"></script>
     <script type="text/javascript" src="{{asset('home/user/style/js/uploader.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('home/user/style/js/uploadExtend.min.js')}}"></script>
-    @yield('js')
+    <link rel="stylesheet" href="{{asset('Home')}}" type="text/css"/>
+
+
+    <style>
+        .security-right{
+            min-height: 928px!important;
+        }
+
+        .security-list li a .al-vip {
+            background: url(style/images/img/icons_m.png) -23px -975px no-repeat;
+        }
+
+        .security-list li a .al-vip.check-t {
+            background-position: -87px -975px;
+        }
+
+        .security-list li a .al-vipscore {
+            background: url(style/images/img/icons_m.png) -23px -1231px no-repeat;
+        }
+
+        .security-list li a .al-vipscore.check-t {
+            background-position: -87px -1231px;
+        }
+
+        .security-list li a .al-gz{
+            background: url(style/images/img/icons_m.png) -792px -80px no-repeat;
+        }
+
+        .security-list li a .al-gz.check-t{
+            background: url(style/images/img/icons_m.png) -855px -80px no-repeat;
+        }
+
+        .viptips {
+            display: none;
+            position: absolute;
+            top: 4px;
+            right: -8px;
+            width: 42px;
+            height: 16px;
+            border-radius: 20px;
+            z-index: 999;
+            background: url(style/images/img/guoqi.png) no-repeat;
+        }
+
+        .isnewvip {
+            display: none;
+            position: absolute;
+            top: 4px;
+            right: -8px;
+            width: 42px;
+            height: 16px;
+            border-radius: 20px;
+            z-index: 999;
+            background: url(style/images/img/icons_m.png) -144px -856px no-repeat;
+        }
+    </style>
 </head>
 <body>
 <div class="z_top_container">
@@ -126,65 +183,14 @@
     <div class="top"></div>
 </div>
 <div class="security_content">
-    <style>
-        .security-right{
-            min-height: 928px!important;
-        }
-
-        .security-list li a .al-vip {
-            background: url(style/images/img/icons_m.png) -23px -975px no-repeat;
-        }
-
-        .security-list li a .al-vip.check-t {
-            background-position: -87px -975px;
-        }
-
-        .security-list li a .al-vipscore {
-            background: url(style/images/img/icons_m.png) -23px -1231px no-repeat;
-        }
-
-        .security-list li a .al-vipscore.check-t {
-            background-position: -87px -1231px;
-        }
-
-        .security-list li a .al-gz{
-            background: url(style/images/img/icons_m.png) -792px -80px no-repeat;
-        }
-
-        .security-list li a .al-gz.check-t{
-            background: url(style/images/img/icons_m.png) -855px -80px no-repeat;
-        }
-
-        .viptips {
-            display: none;
-            position: absolute;
-            top: 4px;
-            right: -8px;
-            width: 42px;
-            height: 16px;
-            border-radius: 20px;
-            z-index: 999;
-            background: url(style/images/img/guoqi.png) no-repeat;
-        }
-
-        .isnewvip {
-            display: none;
-            position: absolute;
-            top: 4px;
-            right: -8px;
-            width: 42px;
-            height: 16px;
-            border-radius: 20px;
-            z-index: 999;
-            background: url(style/images/img/icons_m.png) -144px -856px no-repeat;
-        }
-    </style>
     <div class="security-left">
         <ul class="security-list">
             <li class="f-list" style="cursor: default;"><a  class="first-level" style="color: #99a2aa;cursor: default;">个人中心</a>
                 <ul class="child-list">
                     <li>
+
                         <a href="{{url('home/user/home')}}" id="home" rec-linkid='account_tab_index_click' title="首页">
+
                             <i class="al-sy"></i>
                             <span>首<b class="nbsp"></b>页</span>
                         </a>
@@ -205,6 +211,9 @@
                     </li>
                     <li>
                         <a href="{{url('home/user/message')}}" id="setting">
+
+
+
                             <i class="al-info"></i>
                             <span>我的信息</span>
                         </a>
@@ -224,25 +233,32 @@
                     </li>
 
                     <li>
+
                         <a href="{{url('home/user/add')}}" id="blacklist">
+
+
                             <i class="al-bl"></i>
                             <span>上传视频</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{url('home/user/myupload')}}" id="coin">
+
+
+
                             <i class="al-coin"></i>
                             <span>我的上传</span>
                         </a>
                     </li>
+
                     <li>
-                        <a href="#" id="record">
+                        <a href="{{url('home/user/history')}}" id="record">
                             <i class="al-jl"></i>
-                            <span>我的浏览</span>
+                            <span>观看历史</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" id="record">
+                        <a href="{{url('home/user/comment')}}" id="record">
                             <i class="al-jl"></i>
                             <span>我的评论</span>
                         </a>
@@ -253,114 +269,12 @@
 
         </ul>
     </div>
-    <script type="text/javascript">
-        window.rec_rp = window.rec_rp || function() {
-                (rec_rp.q = rec_rp.q || []).push(arguments)
-            };
-
-        window.get_vip_info = function(callback, re) {
-            re = re ? re : 1;
-            if (!window.UserStatus) {
-                if (re > 10) {
-                    clearTimeout(timer);
-                    return false;
-                }
-                var timer = setTimeout(function() {
-                    re = re + 1;
-                    get_vip_info(callback, re);
-                }, 1000);
-            } else {
-                clearTimeout(timer);
-                window.UserStatus.onLoaded(function(info) {
-                    if (info.isLogin) {
-                        return callback && callback(info);
-                    } else {
-                        // window.location.href = 'https://account.bilibili.com/login?gourl=' + encodeURIComponent(location.href);
-                    }
-                });
-            }
-        }
-
-        window.ac_rec = function(var1, var2, var3, retry) {
-            retry = retry ? retry : 1;
-            if (!window.rec_rp) {
-                if (retry > 10) {
-                    clearTimeout(timere);
-                    return;
-                }
-                var timere = setTimeout(function() {
-                    retry = retry + 1;
-                    ac_rec(var1, var2, var3, retry);
-                }, 1000);
-            } else {
-                clearTimeout(timere);
-                window.rec_rp(var1, var2, var3);
-            }
-        }
-
-        get_vip_info(function(info) {
-            if (info.accessStatus == 0) {
-                document.getElementById('isnewvip').style.display = 'block';
-            }
-            if (info.vipType == 1 || info.vipType == 2) {
-                if (info.dueRemark) {
-                    document.getElementById('viptips').style.display = 'block';
-                    document.getElementById('isnewvip').style.display = 'none';
-                }
-            }
-        });
-
-        ac_rec('event', 'VIP_VIPentrance_show');
-
-        document.getElementById('big').onclick = function() {
-            ac_rec('event', 'VIP_VIPentrance_click');
-        }
-
-        ! function() {
-            function hasClass(obj, cls) {
-                return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-            };
-
-            function addClass(obj, cls) {
-                if (!hasClass(obj, cls)) obj.className += " " + cls;
-            };
-
-            function getUrlParam(name) {
-                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)'); //构造一个含有目标参数的正则表达式对象
-                var r = window.location.search.substr(1).match(reg); //匹配目标参数
-                if (r != null) return unescape(r[2]);
-                return null; //返回参数值
-            };
-
-            var pathname = getUrlParam('type');
-            if (!pathname) {
-                var strUrl = window.location.href;
-                var arrUrl = strUrl.split("/");
-                var strPage = arrUrl[arrUrl.length - 1];
-                if (strPage.indexOf(".") == -1) {
-                    pathname = strPage;
-                } else {
-                    pathname = strPage.substr(0, strPage.indexOf("."));
-                }
-            }
-
-            var getSite = document.getElementById(pathname);
-
-            addClass(getSite.childNodes[1], 'check-t');
-
-            getSite.className = 'bg-blue';
-
-        }();
-    </script>
 
    @section('content')
 
     @show
+
 </div>
-<script type="text/javascript">
-    var staticDomain = "https://static.hdslb.com/account-pc";
-    seajs.use("site-home");
-</script>
 <div id="global-mask"></div>
 <div class="footer">
     <div class="footer-wrp">
@@ -442,5 +356,18 @@
     </div>
 </div>
 
+<script type="text/javascript" src="{{asset('home_temp/style/js/alertplate.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home')}}"></script>
+<script type="text/javascript" src="{{asset('home_temp/style/js/sea.config.js')}}"></script>
+<script id="seajsnode" type="text/javascript" src="{{asset('home_temp/style/js/sea.js')}}"></script>
+<script type="text/javascript" src="{{asset('home_temp/style/js/tvu.uploader.js')}}"></script>
+<script type="text/javascript" src="{{asset('home_temp/style/js/txv.core.js')}}"></script>
+<script type="text/javascript" src="{{asset('home_temp/style/js/txv.sea.js')}}"></script>
+<script type="text/javascript" src="{{asset('home_temp/style/js/uploader.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('home_temp/style/js/uploadExtend.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('home_temp/history/style/css/txv.core.js?(none)')}}"></script>
+<script src="{{asset('home_temp/history/style/css/txv.sea.js')}}"></script>
+
+@yield('js')
 </body>
 </html>
