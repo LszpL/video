@@ -1,0 +1,164 @@
+﻿@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.concerned-list{
+    padding: 0 20px;
+}
+
+.concerned-list li{
+    min-height: 100px;
+    border-bottom: 1px #ccd0d7 solid;
+}
+
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.concerned-photo{
+    float: left;
+    margin: 19px 0 19px 16px;
+}
+.concerned-photo img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #eef4fa;
+}
+
+.concerned-descript-right{
+    margin-top: 35px;
+}
+
+.concerned-text{
+    width: 573px;
+    padding-bottom: 20px;
+}
+
+.concerned-descript{
+    float: left;
+}
+
+.concerned-descript>div{
+    float: left;
+}
+
+.concerned-uname{
+    font-size: 16px;
+    color: #000000;
+    line-height: 1;
+    margin: 20px 0 0 20px;
+    width: 10em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.concerned-message{
+    font-size: 12px;
+    color: #6d757a;
+    line-height: 16px;
+    margin: 12px 0 0 20px;
+    padding-right: 10px;
+}
+
+.concerned-tool{
+    float: left;
+    position: relative;
+}
+
+.concerned-tool-btn{
+    width: 24px;
+    height: 24px;
+    border: 2px solid #f3f6fb;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 1px;
+}
+
+.concerned-tool-btn>i{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #8e98a1;
+    display: block;
+    margin: 2px auto 0;
+}
+
+.concerned-tool-btn>i:first-child{
+    margin-top: 4px;
+}
+
+.concerned-cancel{
+    color: #99a2aa;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 6px;
+    background: #f4f5f7;
+    float: left;
+    border-radius: 3px;
+    margin-right : 14px;
+    cursor: pointer;
+}
+
+.concerned-tool-hidden{
+    width: 85px;
+    padding: 9px 0;
+    border-radius: 3px;
+    border: 1px solid #ccd0d4;
+    position: absolute;
+    right: -10px;
+    top: 36px;
+    background: #fff;
+    display: none;
+}
+
+.concerned-tool-hidden.active{
+    display: block;
+}
+
+.concerned-tool-hidden>div{
+    padding: 7px 4px;
+    color: #212121;
+    line-height: 16px;
+    font-size: 12px;
+    background: #fff;
+    transition: .4s all ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.concerned-tool-hidden>div:hover{
+    color: #00a1d6;
+    background: #e5e9ef;
+}
+
+.no-data:after{
+    background-image: url(img/nodata02.png);
+    background-position: center 40%;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    color: #6d757a;
+    content: "没有悄悄关注哦~";
+    visibility: visible;
+    display: block;
+    font-size: 14px;
+    height: 350px;
+    overflow: hidden;
+    line-height: 600px;
+    text-align: center;
+}
+
+.loading{
+    background: url(img/loadTV.gif) center no-repeat;
+    text-indent: -9999px;
+    height: 400px;
+}
+
+.loading *{
+    display: none;
+}

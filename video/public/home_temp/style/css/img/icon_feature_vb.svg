@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="56" height="56" viewBox="0 0 56 56">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff9db;
+      }
+
+      .cls-2 {
+        filter: url(#gradient-overlay-1);
+      }
+
+      .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #f0c900;
+        filter: url(#gradient-overlay-2);
+      }
+    </style>
+
+    <filter id="gradient-overlay-1" filterUnits="userSpaceOnUse">
+      <feImage x="5" y="1" width="50" height="54" preserveAspectRatio="none" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAiIGhlaWdodD0iNTQiPjxyYWRpYWxHcmFkaWVudCBpZD0iZ3JhZCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGN4PSIyNSIgY3k9IjI3IiByPSIzNC43NDMiPgogIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZjQ5YSIvPgogIDxzdG9wIG9mZnNldD0iMC44IiBzdG9wLWNvbG9yPSIjZmZkZTlhIiBzdG9wLW9wYWNpdHk9IjAiLz4KPC9yYWRpYWxHcmFkaWVudD4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIvPjwvc3ZnPg=="/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend in2="SourceGraphic" result="gradientFill"/>
+    </filter>
+    <filter id="gradient-overlay-2" filterUnits="userSpaceOnUse">
+      <feImage x="13" y="13" width="30" height="30" preserveAspectRatio="none" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIzMCIgeTE9IjMwIiB4Mj0iMCI+CiAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmU4OTAwIi8+CiAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmRjZTAwIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiLz48L3N2Zz4="/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend in2="SourceGraphic" result="gradientFill"/>
+    </filter>
+  </defs>
+  <g>
+    <circle cx="28" cy="28" r="28" class="cls-1"/>
+    <path d="M41.500,44.000 C43.915,44.000 46.133,44.824 47.907,46.195 C43.609,50.895 37.689,54.079 31.016,54.822 C31.013,54.714 31.000,54.609 31.000,54.500 C31.000,48.701 35.701,44.000 41.500,44.000 ZM13.000,38.000 C8.582,38.000 5.000,34.418 5.000,30.000 C5.000,25.582 8.582,22.000 13.000,22.000 C17.418,22.000 21.000,25.582 21.000,30.000 C21.000,34.418 17.418,38.000 13.000,38.000 ZM54.668,23.975 C51.922,25.878 48.594,27.000 45.000,27.000 C35.611,27.000 28.000,19.389 28.000,10.000 C28.000,6.744 28.932,3.712 30.519,1.127 C42.909,2.275 52.842,11.794 54.668,23.975 Z" class="cls-2"/>
+    <path d="M21.000,22.000 L24.453,22.000 L27.703,31.126 C27.859,31.590 27.953,32.011 28.000,32.403 L28.062,32.403 C28.109,31.997 28.219,31.561 28.391,31.097 L31.656,22.000 L35.000,22.000 L29.781,35.000 L26.156,35.000 L21.000,22.000 ZM40.239,36.675 C39.920,37.125 39.295,37.230 38.844,36.911 C38.394,36.591 38.288,35.967 38.608,35.517 C40.173,33.313 41.000,30.713 41.000,28.000 C41.000,20.832 35.169,15.000 28.000,15.000 C20.832,15.000 15.000,20.832 15.000,28.000 C15.000,35.168 20.832,41.000 28.000,41.000 C30.760,41.000 33.395,40.147 35.622,38.533 C36.068,38.209 36.693,38.309 37.018,38.755 C37.342,39.203 37.243,39.828 36.795,40.152 C34.225,42.015 31.184,43.000 28.000,43.000 C19.729,43.000 13.000,36.271 13.000,28.000 C13.000,19.729 19.729,13.000 28.000,13.000 C36.271,13.000 43.000,19.729 43.000,28.000 C43.000,31.130 42.045,34.130 40.239,36.675 Z" class="cls-3"/>
+  </g>
+</svg>

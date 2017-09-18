@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts')
 
 @section('content')
     <div class="tpl-content-wrapper">

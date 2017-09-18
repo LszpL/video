@@ -257,12 +257,43 @@
                         </li>
                     </ul>
                 </li>
+                <li class="tpl-left-nav-item">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-table"></i>
+                        <span>推广管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="{{url('admin/position/push/index')}}">
+                                <i class="am-icon-angle-right"></i>
+                                <span>推广视频列表</span>
+                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
 
             </ul>
         </div>
     </div>
-
+    <!-- 提示信息 -->
+    <div style="display:none;">
+        @if(session('info'))
+            <p id="session">{{session('info')}}</p>
+        @endif
+    </div>
+    <!-- 验证信息 -->
+    @if (count($errors) > 0)
+        <div class="alert alert-danger" style="display:none;">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li class= "info" >{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
 
 @yield('content')
