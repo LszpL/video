@@ -10,25 +10,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="{{asset('admin/assets/i/favicon.png')}}">
+
+    <link rel="icon" type="image/png" href="{{asset('admin_temp/assets/i/favicon.png')}}">
     <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png')}}">
     <meta name="apple-mobile-web-app-title" content="BalaBala" />
-    <link rel="stylesheet" href="{{asset('admin/assets/css/amazeui.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin/assets/css/admin.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/assets/css/app.css')}}">
-    <script src="{{asset('admin/assets/js/echarts.min.js')}}"></script>
-    <!-- <link rel="stylesheet" href="{{asset('admin/dist/css/bootstrap.min.css')}}"> -->
-    <!-- <link rel="stylesheet" href="{{asset('admin/dist/css/AdminLTE.min.css')}}"> -->
-    <link rel="stylesheet" href="{{asset('admin/bower_components/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin_temp/assets/css/amazeui.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin_temp/assets/css/admin.css')}}">
+    <link rel="stylesheet" href="{{asset('admin_temp/assets/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('admin_temp/bower_components/font-awesome/css/font-awesome.min.css')}}">
+    <script src="{{asset('admin_temp/assets/js/echarts.min.js')}}"></script>
 </head>
 
 <body data-type="index">
+    
+    <!-- 提示信息 -->
+    <div style="display:none;">
+        @if(session('info'))
+        <p id="session">{{session('info')}}</p>
+        @endif
+    </div> 
+    <!-- 验证信息 -->
+    @if (count($errors) > 0)
+        <div class="alert alert-danger" style="display:none;">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li class= "info" >{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
 
     <header class="am-topbar am-topbar-inverse admin-header">
         <div class="am-topbar-brand">
             <a href="javascript:;" class="tpl-logo">
-                <img src="{{asset('admin/assets/img/logo.png')}}" alt="">
+
+                <img src="{{asset('admin_temp/assets/img/logo.png')}}" alt="">
             </a>
         </div>
         <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
@@ -62,6 +79,7 @@
 
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+
                         <span class="tpl-header-list-user-nick">欢迎您 {{session('user')->admin_name}}</span><span class="tpl-header-list-user-ico"> 
                         @if(empty(session('user')->admin_face))
                         <img src="{{asset('admin/assets/img/user01.png')}}">
@@ -77,6 +95,7 @@
                     </ul>
                 </li>
                 <li><a href="{{url('/admin/logout')}}" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
+
             </ul>
         </div>
     </header>
@@ -97,12 +116,15 @@
             <div class="tpl-left-nav-list">
                 <ul class="tpl-left-nav-menu">
                     <li class="tpl-left-nav-item">
+
                         <a href="{{url('admin/index')}}" class="nav-link active">
+
                             <i class="am-icon-home"></i>
                             <span>首页</span>
                         </a>
                     </li>
                     
+
 
                     <li class="tpl-left-nav-item " >
                         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
@@ -119,10 +141,42 @@
                                 <a href="{{url('admin/admin/index')}}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>管理员列表</span>
+
+                    <li class="tpl-left-nav-item">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-table"></i>
+                            <span>视频分类</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="{{url('admin/type/add')}}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>分类添加</span>
+                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                </a>
+
+                                <a href="{{url('admin/type/index')}}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>分类列表</span>
+                                    <i class="tpl-left-nav-content tpl-badge-success">18</i>
+                                </a>
+                                <a href="form-news.html">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>消息列表</span>
+                                    <i class="tpl-left-nav-content tpl-badge-primary">5</i>
+                                </a>
+
+                                <a href="form-news-list.html">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>文字列表</span>
+
+
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="tpl-left-nav-item">
                         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                             <i class="fa fa-users"></i>
@@ -134,10 +188,43 @@
                                 <a href="{{url('admin/user/index')}}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>用户列表</span>
+
+
+                    <li class="tpl-left-nav-item">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-table"></i>
+                            <span>视频标签</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="{{url('admin/label/add')}}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>标签添加</span>
+                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                </a>
+
+                                <a href="{{url('admin/label/index')}}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>标签列表</span>
+                                    <i class="tpl-left-nav-content tpl-badge-success">18</i>
+                                </a>
+                                <a href="form-news.html">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>消息列表</span>
+                                    <i class="tpl-left-nav-content tpl-badge-primary">5</i>
+                                </a>
+
+                                <a href="form-news-list.html">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>文字列表</span>
+
+
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="tpl-left-nav-item " >
                         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                             <i class="fa fa-user-plus"></i>
@@ -153,20 +240,49 @@
                                 <a href="{{url('admin/position')}}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>推荐位列表</span>
+
+                     <li class="tpl-left-nav-item">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-table"></i>
+                            <span>视频管理</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="{{url('admin/video/add')}}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>视频添加</span>
+                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                </a>
+
+                                <a href="{{url('admin/video/index')}}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>视频列表</span>
+                                    <i class="tpl-left-nav-content tpl-badge-success">18</i>
+                                </a>
+                                <a href="form-news.html">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>视频图表</span>
+                                    <i class="tpl-left-nav-content tpl-badge-primary">5</i>
+                                </a>
+
+                                <a href="form-news-list.html">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>视频上传</span>
+
+
                                 </a>
                             </li>
                         </ul>
-                    </li>
-
-                    
+                    </li>                 
                 </ul>
             </div>
         </div>
     
            
 
-    @yield('content')
 
+    @yield('content')
 
        
 
@@ -175,34 +291,52 @@
        
 
     </div>
-
-
-    <script src="{{asset('admin/assets/js/jquery.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/amazeui.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/iscroll.js')}}"></script>
-    <script src="{{asset('admin/assets/js/app.js')}}"></script>
-    <script src="{{asset('admin/layer/layer.js')}}"></script>
+    <script src="{{asset('admin_temp/assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('admin_temp/assets/js/amazeui.min.js')}}"></script>
+    <script src="{{asset('admin_temp/assets/js/iscroll.js')}}"></script>
+    <script src="{{asset('admin_temp/assets/js/app.js')}}"></script>
+    <script type="text/javascript" src="{{asset('layer/layer.js')}}" ></script>
+    
     <script type="text/javascript">
-    // $("#alertError").fadeOut(4000);
-    // $(".cosA").fadeOut(5000);
-    //验证信息
-    var str = '';
+        //验证信息
+        var str = '';
         if(typeof($('.info').html()) == 'string' && $('.info').html() !== null    ){
                $('.info').each(function(i,n){
-                 str += $(n).html()+'<br>';         
+                 str += $(n).html()+'<br>'; 
+                 layer.alert(str, {icon: 8});   
             });
-                layer.alert(str, {icon: 5}); 
         }
 
         //提示信息
-         if(typeof($('#session').html()) == 'string' &&  $('#session').html() !== null )
+         if(typeof($('#session').html()) == 'string' &&  $('#session').html()  )
       {
-            layer.alert($('#session').html(), {icon: 8});
-            // setTimeout(function(){location.href = location.href;},2000);
-            
+            // layer.alert($('#session').html(), {icon: 8});
       }
-    </script>
-    @yield('js');
+       //清除session 
+      if( typeof($('#session').html()) == 'string' &&  $('#session').html()  )
+        
+       {
+            $.ajax({
+                type: "post",
+                url: "/admin/index/session",
+                data: {id:1,_token:'{{csrf_token()}}'}, 
+                
+                success: function(data){
+                    
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("上传失败，请检查网络后重试");
+                }
+            });
+       } 
+
+   </script>  
+
+    @yield('js')
+
 </body>
 
 </html>
+
+
+
