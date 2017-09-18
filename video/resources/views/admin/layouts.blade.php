@@ -5,48 +5,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{config('app.name')}} - {{$title}}</title>
-
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="{{asset('admin_temp/assets/i/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('admin/assets/i/favicon.png')}}">
     <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png')}}">
     <meta name="apple-mobile-web-app-title" content="BalaBala" />
-    <link rel="stylesheet" href="{{asset('admin_temp/assets/css/amazeui.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin_temp/assets/css/admin.css')}}">
-    <link rel="stylesheet" href="{{asset('admin_temp/assets/css/app.css')}}" >
-    <script type="text/javascript"    src="{{asset('admin_temp/assets/js/echarts.min.js')}}"></script>
-    <script type="text/javascript"   src="{{asset('admin_temp/assets/js/bootstrap.min.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('admin_temp/assets/css/sweetalert.css')}}">
-
+    <link rel="stylesheet" href="{{asset('admin/assets/css/amazeui.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin/assets/css/admin.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/assets/css/app.css')}}">
+    <script src="{{asset('admin/assets/js/echarts.min.js')}}"></script>
+    <!-- <link rel="stylesheet" href="{{asset('admin/dist/css/bootstrap.min.css')}}"> -->
+    <!-- <link rel="stylesheet" href="{{asset('admin/dist/css/AdminLTE.min.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('admin/bower_components/font-awesome/css/font-awesome.min.css')}}">
+	    <link rel="stylesheet" href="{{asset('admin_temp/assets/css/sweetalert.css')}}">
 </head>
-<body data-type="index"  >
-    
-    <!-- 提示信息 -->
-    <div style="display:none;">
-        @if(session('info'))
-        <p id="session">{{session('info')}}</p>
-        @endif
-    </div> 
-    <!-- 验证信息 -->
-    @if (count($errors) > 0)
-        <div class="alert alert-danger" style="display:none;">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li class= "info" >{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+
+<body data-type="index">
 
 
     <header class="am-topbar am-topbar-inverse admin-header">
         <div class="am-topbar-brand">
             <a href="javascript:;" class="tpl-logo">
-
-                <img src="{{asset('admin_temp/assets/img/logo.png')}}" alt="">
+                <img src="{{asset('admin/assets/img/logo.png')}}" alt="">
             </a>
         </div>
         <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
@@ -80,7 +63,6 @@
 
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-
                         <span class="tpl-header-list-user-nick">欢迎您 {{session('user')->admin_name}}</span><span class="tpl-header-list-user-ico"> 
                         @if(empty(session('user')->admin_face))
                         <img src="{{asset('admin/assets/img/user01.png')}}">
@@ -96,7 +78,6 @@
                     </ul>
                 </li>
                 <li><a href="{{url('/admin/logout')}}" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
-
             </ul>
         </div>
     </header>
@@ -107,7 +88,7 @@
 
 
 
-    <div class="tpl-page-container tpl-page-header-fixed">
+        <div class="tpl-page-container tpl-page-header-fixed">
 
 
         <div class="tpl-left-nav tpl-left-nav-hover">
@@ -133,7 +114,7 @@
                             <span>管理员管理</span>
                             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                         </a>
-                        <ul class="tpl-left-nav-sub-menu" style="display: block;">
+                        <ul class="tpl-left-nav-sub-menu" >
                             <li>
                                 <a href="{{url('admin/admin/add')}}">
                                     <i class="am-icon-angle-right"></i>
@@ -142,6 +123,22 @@
                                 <a href="{{url('admin/admin/index')}}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>管理员列表</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+					
+					<li class="tpl-left-nav-item">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="fa fa-users"></i>
+                            <span>用户管理</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li> 
+                                <a href="{{url('admin/user/index')}}">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>用户列表</span>
                                 </a>
                             </li>
                         </ul>
@@ -169,21 +166,7 @@
                         </ul>
                     </li>
 
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="fa fa-users"></i>
-                            <span>用户管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu" style="display: block;">
-                            <li> 
-                                <a href="{{url('admin/user/index')}}">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>用户列表</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+
 
 
                     <li class="tpl-left-nav-item">
@@ -227,7 +210,7 @@
                             <span>推荐位管理</span>
                             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                         </a>
-                        <ul class="tpl-left-nav-sub-menu" style="display: block;">
+                        <ul class="tpl-left-nav-sub-menu">
                             <li>
                                 <a href="{{url('admin/position/create')}}">
                                     <i class="am-icon-angle-right"></i>
@@ -236,6 +219,10 @@
                                 <a href="{{url('admin/position')}}">
                                     <i class="am-icon-angle-right"></i>
                                     <span>推荐位列表</span>
+								</a>
+							</li>
+						</ul>
+					</li>
 
                      <li class="tpl-left-nav-item">
                         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
@@ -296,7 +283,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                    </li>
                         <li class="tpl-left-nav-item">
                             <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                                 <i class="am-icon-table"></i>
@@ -399,23 +386,25 @@
         </div>  
     @yield('content')
     </div>
-<script src="{{asset('admin_temp/assets/js/jquery.min.js')}}"></script>
-<script src="{{asset('admin_temp/assets/js/amazeui.min.js')}}"></script>
-<script src="{{asset('admin_temp/assets/js/iscroll.js')}}"></script>
-<script src="{{asset('admin_temp/assets/js/app.js')}}"></script>
-<script src="{{asset('admin_temp/assets/js/sweetalert-dev.js')}}"></script>
-<script src="{{asset('admin_temp/assets/js/sweetalert.min.js')}}"></script>
-<script src="{{asset('/layer/layer.js')}}"></script>
-<script type="text/javascript" src="{{asset('admin_temp/assets/layer/layer.js')}}"></script>
-<script type="text/javascript" src="{{asset('admin_temp/assets/js/sweetalert-dev.js')}}"></script>
-<script type="text/javascript" src="{{asset('admin_temp/assets/js/sweetalert.min.js')}}"></script>
-<link rel="stylesheet" href="{{asset('admin_temp/assets/css/amazeui.min.css')}}" />
 
 
-<link rel="stylesheet" href="{{asset('js-sdk/dist/qiniu.js')}}" >
+    <script src="{{asset('admin/assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('admin/assets/js/amazeui.min.js')}}"></script>
+    <script src="{{asset('admin/assets/js/iscroll.js')}}"></script>
+    <script src="{{asset('admin/assets/js/app.js')}}"></script>
+    <script src="{{asset('admin/layer/layer.js')}}"></script>
+	<script src="{{asset('admin_temp/assets/js/sweetalert-dev.js')}}"></script>
+	<script src="{{asset('admin_temp/assets/js/sweetalert.min.js')}}"></script>
+	<script src="{{asset('/layer/layer.js')}}"></script>
+	<script type="text/javascript" src="{{asset('admin_temp/assets/layer/layer.js')}}"></script>
+	<script type="text/javascript" src="{{asset('admin_temp/assets/js/sweetalert-dev.js')}}"></script>
+	<script type="text/javascript" src="{{asset('admin_temp/assets/js/sweetalert.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('js-sdk/dist/qiniu.js')}}" >
 {{--七牛插件引入--}}
 <script type="text/javascript" src="{{asset('admin_temp/assets/js/sweetalert.min.js')}}"></script>
 <script type="text/javascript" src="http://cdn.staticfile.org/plupload/2.1.9/i18n/ar.js"></script>
+<script type="text/javascript"    src="{{asset('admin_temp/assets/js/echarts.min.js')}}"></script>
+<script type="text/javascript"   src="{{asset('admin_temp/assets/js/bootstrap.min.js')}}"></script>
     
     <script type="text/javascript">
         //验证信息
@@ -450,4 +439,3 @@
 </body>
 
 </html>
-
