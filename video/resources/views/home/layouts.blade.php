@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <title>Demo</title>
   <link rel="shortcut icon" href="favicons/1.png')}}">
@@ -169,13 +170,13 @@
       </div>
     </div>
   </header>
-
   <!-- 头部 -->
 @section('content')
 
 @show
 
 
+<<<<<<< HEAD
  <!--  尾部-->
    <footer id="footer">
     <div class="page-width">
@@ -254,7 +255,5 @@
 </body>
 </html>
 
-
-
-
  <!-- 尾部 -->
+

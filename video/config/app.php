@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', '视觉'),
+
+    'name' => env('APP_NAME', '视频网站'),
 
     /*
     |--------------------------------------------------------------------------
@@ -177,7 +178,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,
-
     ],
 
     /*

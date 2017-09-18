@@ -50,9 +50,8 @@ Route::post('user/sq/{id}','UserController@sq');
 //账号状态
 Route::post('user/fh/{id}','UserController@fh');
 
-// ===================================	LMY==============================================
+
 //后台首页	
- Route::get('index','IndexController@index');
  Route::post('index/session','IndexController@session');
 
 
@@ -92,6 +91,52 @@ Route::get('video/delete/{id}','VideoController@delete');
 
 //推荐位
 Route::resource('position','PositionController');
+
+//个人用户视频上传列表
+Route::get('upload/index','UploadController@index');
+Route::get('upload/finish/{id}','UploadController@finish');
+Route::get('upload/defeated/{id}','UploadController@defeated');
+Route::get('upload/delete/{id}','UploadController@delete');
+//个人用户用户视频添加
+Route::get('upload/add','UploadController@add');
+Route::post('upload/video','UploadController@video');
+Route::post('upload/insert','UploadController@insert');
+
+//网站配置模块的路由
+Route::resource('config','ConfigController');
+
+
+
+ //评论列表路由
+Route::get('comment','CommentController@index');
+ // 评论删除路由
+Route::post('comment/delete/{id}','CommentController@delete');
+
+// vip用户列表路由
+Route::get('user/vip','VipController@index');
+
+Route::post('user/vip/delete/{id}','VipController@delete');
+
+// 友情链接
+// 连接列表
+Route::get('link','LinkController@index');
+
+// 更新信息
+Route::post('link/update','LinkController@update');
+// 删除
+Route::post('link/delete/{id}','LinkController@delete');
+
+// 添加
+Route::get('link/add','LinkController@add');
+Route::post('link/insert','LinkController@insert');
+
+// 推广
+Route::get('position/push/index','PushController@index');
+Route::get('position/push/add/{id}','PushController@add');
+Route::post('position/push/insert','PushController@insert');
+Route::post('position/push/delete/{id}','PushController@delete');
+Route::get('position/push/edit/{id}/{name}','PushController@edit');
+Route::post('position/push/update','PushController@update');
 });
 
 
@@ -114,4 +159,25 @@ Route::get('home/zhuce','Home\LoginController@zhuce');
 
 //前台首页
  Route::get('/home/index/index','home\IndexController@index');
+
+
+
+
+//前台个人中心
+//前台个人首页
+Route::get('/home/user/home','Home\UserController@home');
+//首页个人信息
+Route::get('/home/user/message','Home\UserController@message');
+//首页上传
+Route::get('/home/user/add','Home\UserController@add');
+Route::post('/home/user/video','Home\UploadController@video');
+Route::post('/home/user/upload','Home\UploadController@upload');
+Route::get('/home/user/myupload','Home\UploadController@myupload');
+//Route::get('/home/user/face','Home');
+
+
+
+// 前台
+Route::get('/home/user/comment','Home\UserController@comment');
+Route::get('/home/user/history','Home\UserController@history');
 

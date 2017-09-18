@@ -1,0 +1,98 @@
+﻿@font-face{font-family:'x_font_dialog';src:url(img/x_dialog.eot);src:url(img/x_dialog01.eot) format('embedded-opentype'),url(img/x_dialog.woff) format('woff'),url(img/x_dialog.ttf) format('truetype')}
+.x_modal *,.x_alert *{margin:0;padding:0}
+.x_modal .x_iconfont,.x_alert .x_iconfont{font-family:"x_font_dialog"!important;font-size:18px;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-transform:rotate(.1deg);text-rendering:optimizeLegibility}
+.x_modal .x_icon_warning,.x_alert .x_icon_warning{color:#ff6428}
+.x_modal .x_icon_check,.x_alert .x_icon_check{color:#5ebe00}
+.x_modal .x_icon_warning,.x_modal .x_icon_check{font-size:50px}
+.x_alert .x_icon_warning,.x_alert .x_icon_check{margin-right:5px;vertical-align:top}
+.x_modal,.x_alert{position:fixed;top:50%;left:50%;width:380px;margin-left:-190px;margin-top:-130px;background-color:#fff;border:1px solid #dadada;border:1px solid rgba(255,255,255,0);box-shadow:0 1px 6px 0 rgba(0,0,0,.3);line-height:1.5;font:12px/1.5 PingFangSC-Regular,Microsoft Yahei,simsun}
+.x_modal a,.x_alert a{color:#ff6428;text-decoration:none}
+.x_alert .hl{color:#ff6428}
+.x_modal a:hover,.x_alert a:hover{color:#ff850b}
+.x_modal .x_iframe_mask,.x_alert .x_iframe_mask{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0}
+.x_modal .x_close,.x_alert .x_close{position:absolute;right:10px;top:10px;color:#999}
+.x_modal .x_close:hover,.x_alert .x_close:hover{color:#666}
+.x_modal_bd{position:relative;padding:40px 30px 30px;text-align:center}
+.x_modal_bd .x_title{margin:0;font-size:18px;font-weight:normal;color:#2a2a2a}
+.x_modal_bd .x_desc{margin:5px auto 0;font-size:12px;color:#999}
+.x_modal_bd .x_desc_inner{text-align:left}
+.x_modal_bd .x_desc .x_inp_check{margin-right:5px}
+.ie .x_modal_bd .x_inp_check{vertical-align:-2px}
+.x_modal_ft{position:relative;height:60px;background-color:#FAFAFA;text-align:center}
+.x_modal .x_btn,.x_alert .x_btn{display:inline-block;margin:13px 10px 0;vertical-align:top;min-width:60px;line-height:34px;padding:0 15px;text-decoration:none;background-color:#EAEAEA;color:#666;cursor:pointer;border-radius:17px}
+.x_modal .x_btn_primary,.x_alert .x_btn_primary{color:#fff;background:#ff6428;background:-webkit-linear-gradient(left,#ff850b 0,#ff5945 100%);background:linear-gradient(to right,#ff850b 0,#ff5945 100%)}
+.x_modal .x_btn:hover,.x_alert .x_btn:hover{background-color:#E2E2E2;color:#666}
+.x_modal .x_btn_primary:hover,.x_alert .x_btn_primary:hover{color:#fff;background:#ff6428}
+.x_modal .x_getvip_img{margin-top:-13px}
+.x_modal .x_getvip_title{font-size:16px;margin-top:4px;margin-bottom:6px}
+.x_modal .x_getvip_title .hl{color:#ff6428}
+.x_alert{width:320px;margin-left:-160px;margin-top:-60px;text-align:center}
+.x_alert_bd{position:relative;padding:40px 30px 30px}
+.x_alert .x_title{margin-bottom:10px;line-height:24px;font-size:16px}
+.x_alert .x_desc{margin:10px auto 0;font-size:12px;color:#999}
+.x_alert_ft{margin-top:0}
+.x_modal_form{text-align:left}
+.x_modal_form .x_title{font-size:14px;margin:5px auto}
+.x_modal_form .x_options{margin:0 auto 10px;text-align:left}
+.x_modal_form .x_lable{display:inline-block;width:31%;margin:0 0 5px 0}
+.x_modal_form .x_lable .x_radio{margin-right:5px;margin-top:2px;vertical-align:top}
+.x_modal_form .x_inp_text{width:90%;height:20px;padding:2px 5px;border:1px solid #E4E4E4}
+.x_modal_form .x_inp_text:focus{outline:none;border-color:#BBB}
+.x_modal_share{width:420px;margin-left:-210px}
+.x_share_content .x_iconfont{display:inline-block;width:32px;height:32px;line-height:32px;text-align:center;font-size:24px;cursor:pointer;color:#fff;background-color:#5CBF20;border-radius:2px;transition:all ease-out .1s;overflow:hidden}
+.x_share_content .x_icon_wechat{background-color:#5CBF20}
+.x_share_content .x_icon_qq{background-color:#64D5FC}
+.x_share_content .x_icon_qzone{background-color:#F7AE32}
+.x_share_content .x_icon_qqweibo{background-color:#44B6F2}
+.x_share_content .x_icon_sinaweibo{background-color:#EB452F}
+.x_share_content .x_icon_douban{font-size:22px;line-height:34px;background-color:#499A19}
+.x_share_content .x_icon_qq:hover{background-color:#51CBF8}
+.x_share_content .x_icon_qzone:hover{background-color:#F09E30}
+.x_share_content .x_icon_qqweibo:hover{background-color:#3FA9DD}
+.x_share_content .x_icon_weibo:hover{background-color:#E3422D}
+.x_share_content .x_icon_douban:hover{background-color:#408919}
+.x_share_content{overflow:hidden}
+.x_share_qr{position:relative;float:left;width:100px;padding-right:20px;border-right:1px solid #E7E7E7}
+.x_share_qr .x_icon_wechat{position:absolute;top:50%;left:50%;margin-left:-26px;margin-top:-16px;opacity:.9;filter:alpha(opacity=90);cursor:default}
+.x_qr_pic{width:100px;height:100px}
+.x_qr_pic img{width:100%;height:100%}
+.x_share_sns{float:left;width:218px;padding-top:32px;padding-left:20px}
+.x_share_sns .x_btn_share{display:inline-block;overflow:hidden;margin:0 4px;vertical-align:top}
+.x_share_sns:after{content:'';display:inline-block;width:100%}
+.x_modal_verify,.x_modal_verify_ok{width:420px;margin-left:-210px}
+.x_modal_verify .x_modal_bd{padding:45px 30px 20px}
+.x_modal_verify_ok .x_modal_bd{padding:72px 30px 62px}
+.x_modal_verify .x_modal_form{margin-top:35px}
+.z_input{margin:0 30px 30px 90px;position:relative;min-height:36px;z-index:9}
+.z_input .z_label{position:absolute;top:7px;left:-90px;display:inline-block;width:75px;text-align:right;font-size:14px;color:#666}
+.z_input .z_inp_phone,.z_input .z_inp_code{width:220px;padding:9px;outline:none;font-size:14px;border-radius:1px;border:1px solid #eaeaea}
+.z_input .z_inp_code{width:110px}
+.z_input .z_btn_getcode{position:absolute;right:0;top:0;display:inline-block;width:98px;height:34px;line-height:34px;text-align:center;color:#2a2a2a;background:#f2f2f2;border:1px solid #e7e7e7}
+.z_input .z_btn_getcode:hover{color:#2a2a2a;background:#e7e7e7}
+.z_input .z_btn_disable,.z_input .z_btn_disable:hover{color:#999;background:#f9f9f9;cursor:default}
+.z_input .z_btn_disable .z_num{color:#666;font-weight:bold;padding-left:3px}
+.z_input .z_warnning_txt{display:none;position:absolute;left:0;top:39px;color:#fa5058}
+.z_warnning .z_warnning_txt{display:block}
+.z_select{position:relative;width:240px}
+.z_select_hd{position:relative;width:220px;padding:9px;outline:none;line-height:16px;font-size:14px;border-radius:1px;border:1px solid #eaeaea}
+.z_select_btn{position:absolute;right:0;top:0;width:36px;height:36px;background:url(img/z_select_btn.png) no-repeat center center;cursor:pointer}
+.z_select_bd{position:absolute;top:100%;left:0;width:232px;padding:3px;background-color:#fff;border:1px solid #eaeaea;border-top:0;display:none}
+.z_select_dropdown{list-style:none;background-color:#fff;height:130px;overflow-y:auto}
+.z_select_dropdown li{list-style:none;color:#666;padding:4px 9px;cursor:pointer;*zoom:1}
+.z_select_dropdown li:after{content:"";clear:both;display:table}
+.z_select_dropdown li .countrycode{float:right;margin-right:5px}
+.z_select_dropdown li:hover{color:#ff920b}
+.z_select.open .z_select_bd{display:block}
+.z_select.open .z_select_hd{border-radius:1px 1px 0 0}
+.z_select_dropdown::-webkit-scrollbar{width:2px;background:transparent}
+.z_select_dropdown::-webkit-scrollbar-thumb{border-radius:0;background-color:#d5d5d5}
+.z_select_dropdown::-webkit-scrollbar-thumb:hover{background-color:rgba(0,0,0,.3);border-radius:5px}
+.z_select_dropdown::-webkit-scrollbar-thumb:window-inactive{background:rgba(0,0,0,.15)}
+.z_select_dropdown::-webkit-scrollbar-thumb:vertical,.z_select_dropdown::-webkit-scrollbar-track:vertical{border:0}
+.z_select_dropdown::-webkit-scrollbar-thumb:horizontal,.z_select_dropdown::-webkit-scrollbar-track:horizontal{border:0}
+.popup-mosaic::-webkit-scrollbar-track{background:transparent}
+.popup-mosaic::-webkit-scrollbar-track:hover{background:transparent}
+.z_inp_phone_wrapper{width:240px;height:36px;font-size:0}
+.z_inp_phone_wrapper .z_txt_countrycode{display:inline-block;*display:inline;*zoom:1;vertical-align:top;width:51px;padding:9px 4px;line-height:16px;font-size:14px;text-align:center;border-radius:1px;background-color:#fafafa;border:1px solid #eaeaea;border-right:0}
+.z_inp_phone_wrapper .z_inp_phone{display:inline-block;*display:inline;*zoom:1;vertical-align:top;width:160px}
+#CssGaga{content:"170728180757,v_e,334"}
